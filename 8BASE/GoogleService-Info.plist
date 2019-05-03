@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>206211333209-j3ttf6mrlrqnltqvmt0v49j7534bhgd6.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.206211333209-j3ttf6mrlrqnltqvmt0v49j7534bhgd6</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDeIrQDutpLaTNSRlT76NGIaeAkhpTCo1A</string>
+	<key>GCM_SENDER_ID</key>
+	<string>206211333209</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>CLS.Octava</string>
+	<key>PROJECT_ID</key>
+	<string>octava-app-v1</string>
+	<key>STORAGE_BUCKET</key>
+	<string>octava-app-v1.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:206211333209:ios:dec3ea0aaef5eece</string>
+	<key>DATABASE_URL</key>
+	<string>https://octava-app-v1.firebaseio.com</string>
+</dict>
+</plist>
