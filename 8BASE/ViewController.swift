@@ -12,6 +12,7 @@ import FirebaseDatabase
 class ViewController: UIViewController {
 //MARK: Properties
     
+    @IBOutlet weak var labelGuardar: UILabel!
     @IBOutlet weak var botonGuardar: UIButton!
     @IBOutlet weak var casillaGuardar: UITextField!
     override func viewDidLoad() {
@@ -26,6 +27,9 @@ class ViewController: UIViewController {
     @IBAction func click(_ sender: Any) {
         let ref = Database.database().reference()
         ref.child("81/caca1/caca2").setValue("\(casillaGuardar.text!)")
+        ref.child("81/caca1/caca2").observeSingleEvent(of: .value) { (dato) in
+            self.labelGuardar.text = dato.value as? String
+        }
     }
 
 

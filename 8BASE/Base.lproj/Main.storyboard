@@ -37,6 +37,13 @@
                                     <action selector="click:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="lns-8R-3sG"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jl6-qy-rfa">
+                                <rect key="frame" x="108" y="375" width="200" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -44,6 +51,7 @@
                     <connections>
                         <outlet property="botonGuardar" destination="pef-mX-sLu" id="znm-yk-dUT"/>
                         <outlet property="casillaGuardar" destination="NjK-Sp-uyW" id="bVx-BY-Otd"/>
+                        <outlet property="labelGuardar" destination="Jl6-qy-rfa" id="sw7-KA-k7j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
