@@ -10,7 +10,6 @@ import UIKit
 import FirebaseDatabase
 
 class ViewController: UIViewController {
-var cacatexto = ""
 //MARK: Properties
     
     @IBOutlet weak var botonGuardar: UIButton!
