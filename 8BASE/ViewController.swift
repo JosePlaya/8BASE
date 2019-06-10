@@ -13,7 +13,7 @@ let ref = Database.database().reference()
 
 class ViewController: UIViewController {
 //MARK: Properties
-    var db: Firestore!
+    var db:  Firestore!
     
     @IBOutlet weak var labelGuardar: UILabel!
     @IBOutlet weak var botonGuardar: UIButton!
