@@ -57,11 +57,18 @@
                                 <state key="normal" title="Ingresar">
                                     <color key="titleColor" red="0.90448933839797974" green="0.19830632209777832" blue="0.13712182641029358" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="LogIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CVX-7K-g1B"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="textoPass" destination="VtF-Mw-dKT" id="lf0-vd-mQP"/>
+                        <outlet property="textoUsuario" destination="eYi-AK-gQ4" id="Ri5-DH-aPQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
