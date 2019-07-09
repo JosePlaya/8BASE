@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         if let email = self.textoUsuario.text, let password = self.textoPass.text {
             Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
                 if error == nil{
-                    self.performSegue(withIdentifier: "loginToHome", sender: self)
+                    self.performSegue(withIdentifier: "LoggedIn", sender: self)
                 }
                 else{
                     let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
@@ -28,11 +28,13 @@ class ViewController: UIViewController {
                     alertController.addAction(defaultAction)
                     self.present(alertController, animated: true, completion: nil)
                 
-            }
+             }
         }
         
     }
-   }
+   
+    }
+    
  }
 
     
