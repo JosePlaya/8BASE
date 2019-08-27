@@ -8,14 +8,20 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UITextFieldDelegate {
 
     @IBOutlet weak var textoUsuario: UITextField!
     @IBOutlet weak var textoPass: UITextField!
     
+
     @IBAction func LogIn(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        if firebaseAuth != nil{
+            self.performSegue(withIdentifier: "LoggedIn", sender: self)
+        }
         if let email = self.textoUsuario.text, let password = self.textoPass.text {
             Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
                 if error == nil{
@@ -34,8 +40,13 @@ class ViewController: UIViewController {
     }
    
     }
+   
+
     
- }
+    
+    
+    
+}
 
     
 
