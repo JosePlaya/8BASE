@@ -1,4 +1,4 @@
-//
+////
 //  ScanViewController.swift
 //  MOZAPP
 //
@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import Foundation
 
 class ScanViewController: UIViewController {
     
@@ -64,13 +65,11 @@ extension ScanViewController: AVCaptureMetadataOutputObjectsDelegate {
         if supportedCodeTypes.contains(metadataObj.type) {
             captureSession?.stopRunning()
             // Infomracion del codigo QR
-            print(metadataObj)
-            self.performSegue(withIdentifier: "QRCheck", sender: self)
-            
+            //            print(metadataObj)
+            print("HOLA")
+            self.performSegue(withIdentifier: "mainSegue", sender: nil)
         } else {
             captureSession?.startRunning()
         }
     }
 }
-
-
