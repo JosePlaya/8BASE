@@ -21,6 +21,7 @@
 		8D70B47E227CBC2200E11D7B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D70B47D227CBC2200E11D7B /* GoogleService-Info.plist */; };
 		8D70B47F227CBC2200E11D7B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D70B47D227CBC2200E11D7B /* GoogleService-Info.plist */; };
 		8D70B480227CBC2200E11D7B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D70B47D227CBC2200E11D7B /* GoogleService-Info.plist */; };
+		8DABAE5B231F28A800C3BD6B /* DetailedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DABAE5A231F28A800C3BD6B /* DetailedController.swift */; };
 		C0E7A9FB3ECEFCC65C859C75 /* Pods_8BASEUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E768B4C9A39AEDF68F3076C /* Pods_8BASEUITests.framework */; };
 		D62BD47C6608FC6838F57672 /* Pods_8BASETests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DD310A243F6C4F73DFC62A5 /* Pods_8BASETests.framework */; };
 /* End PBXBuildFile section */
@@ -67,6 +68,7 @@
 		8D70B46F227CBB3500E11D7B /* _BASEUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _BASEUITests.swift; sourceTree = "<group>"; };
 		8D70B471227CBB3500E11D7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D70B47D227CBC2200E11D7B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8DABAE5A231F28A800C3BD6B /* DetailedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedController.swift; sourceTree = "<group>"; };
 		8E768B4C9A39AEDF68F3076C /* Pods_8BASEUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_8BASEUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F9BE2E762A0603C983B119D /* Pods-8BASE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-8BASE.release.xcconfig"; path = "Target Support Files/Pods-8BASE/Pods-8BASE.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,6 +154,7 @@
 				8D70B44E227CBB3300E11D7B /* ViewController.swift */,
 				8D70B47D227CBC2200E11D7B /* GoogleService-Info.plist */,
 				8D70B450227CBB3300E11D7B /* Main.storyboard */,
+				8DABAE5A231F28A800C3BD6B /* DetailedController.swift */,
 				8D70321D2307245A001306FA /* CheckController.swift */,
 				8D70B456227CBB3500E11D7B /* Assets.xcassets */,
 				8D70B458227CBB3500E11D7B /* LaunchScreen.storyboard */,
@@ -423,6 +426,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D70321C2307222A001306FA /* ScanViewController.swift in Sources */,
+				8DABAE5B231F28A800C3BD6B /* DetailedController.swift in Sources */,
 				8D70321E2307245A001306FA /* CheckController.swift in Sources */,
 				8D70B455227CBB3300E11D7B /* _BASE.xcdatamodeld in Sources */,
 				8D70B44F227CBB3300E11D7B /* ViewController.swift in Sources */,
