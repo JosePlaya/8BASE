@@ -11,9 +11,9 @@ import UIKit
 
 //https://www.youtube.com/watch?v=cJUmrdfgbbA
 
-class CheckController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class UITableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let elementosArray = ["kjhbkj,1", "2o.kjb,hk.l", "3jvghcnhmvj,"]
-    @IBOutlet weak var myTableView: UITableView!
+   
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
