@@ -279,6 +279,9 @@
                                 <state key="normal" title="CONTINUAR -&gt;">
                                     <color key="titleColor" red="0.15017229709999999" green="0.55543636659999995" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="continuarBtn:" destination="qDb-ke-Hm4" eventType="touchUpInside" id="E2r-43-XKG"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zog-Fa-u03">
                                 <rect key="frame" x="461" y="90" width="223" height="254"/>
@@ -291,11 +294,23 @@
                                 <state key="normal" title="INCORRECTO">
                                     <color key="titleColor" red="0.98773342369999995" green="0.1151667014" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="incorrectoBtn:" destination="qDb-ke-Hm4" eventType="touchUpInside" id="UPP-q4-RIb"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="T1e-M2-eYk"/>
                     </view>
+                    <connections>
+                        <outlet property="cajonera" destination="WDf-fW-PSv" id="bEi-Aq-YHV"/>
+                        <outlet property="cantidad" destination="4UD-yB-zat" id="W4g-dP-Iy8"/>
+                        <outlet property="marca" destination="h4o-gt-bxw" id="jIH-d4-Tn8"/>
+                        <outlet property="modelo" destination="ym0-kx-OF2" id="5Q6-Qf-YFb"/>
+                        <outlet property="nElemento" destination="pzT-sj-o1G" id="ucI-9o-fcF"/>
+                        <outlet property="observaciones" destination="6Ic-jy-KNb" id="ki6-v9-koS"/>
+                        <outlet property="unidad" destination="byM-R8-Ow3" id="dk5-ZD-V51"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aCy-3A-LPQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
