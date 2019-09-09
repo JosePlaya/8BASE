@@ -33,6 +33,9 @@ struct elemento {
 class DetailedController: UIViewController {
     
     var i = 0
+    var Unidad = "UNIDAD 83"
+    var Cajonera = "0 Cabina"
+    var obs = "Sin observaciones"
     
     @IBOutlet weak var cajonera: UILabel!
     @IBOutlet weak var unidad: UILabel!
@@ -47,17 +50,8 @@ class DetailedController: UIViewController {
         readDatabase()
     }
     @IBAction func incorrectoBtn(_ sender: Any) {
-        //Se debe cambiar el "ESTADO" del elemento a "malo"
-        let refR = Database.database().reference().child("UNIDAD 83").child("0 Cabina")
-        refR.observeSingleEvent(of: .value, with: { snapshot in
-            if !snapshot.exists() { return }
-            //Obtener nombre elemento
-            var a = String(self.i)
-            a += "/NOMBRE"
-            let nombre = snapshot.childSnapshot(forPath: a).value
-            
-            _ = Database.database().reference().child("CHECKLIST").child(self.getDate()).child(nombre as! String).setValue(["Estado": "malo"])
-        })
+        //Inicia cuadro de dialogo
+        self.getError()
     }
     
     @IBAction func retrocederBtn(_ sender: Any) { //NO ESTÁ FUNCIONANDO!!
@@ -72,10 +66,45 @@ class DetailedController: UIViewController {
         super.viewDidLoad()
         readDatabase()
     }
+    func getError() { //Cuadro de dialogo para verificar que es lo que está mal
+        //https://learnappmaking.com/uialertcontroller-alerts-swift-how-to/
+        let alert = UIAlertController(title: "¿Qué le pasó", message: "", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "No está", style: .default, handler: { action in
+            let refR = Database.database().reference().child(self.Unidad).child(self.Cajonera)
+            refR.observeSingleEvent(of: .value, with: { snapshot in
+                if !snapshot.exists() { return }
+                //Obtener nombre elemento
+                var a = String(self.i)
+                a += "/NOMBRE"
+                let nombre = snapshot.childSnapshot(forPath: a).value
+                _ = Database.database().reference().child("CHECKLIST").child(self.getDate()).child(self.Unidad).child(self.Cajonera).child(nombre as! String).setValue(["Estado": "REVISAR","Observacion":"No está"])})}))
+        alert.addAction(UIAlertAction(title: "Otro", style: .default, handler: { action in
+            self.getObservaciones()}))
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
+        self.present(alert, animated: true)
+    }
+    
+    func getObservaciones() { //Cuadro de dialogo para obtener observaciones
+        let alert = UIAlertController(title: "Observaciones", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
+        alert.addTextField(configurationHandler: { textField in
+            textField.placeholder = "Indique qué está mal..."})
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            if let obs = alert.textFields?.first?.text {
+                let refR = Database.database().reference().child(self.Unidad).child(self.Cajonera)
+                refR.observeSingleEvent(of: .value, with: { snapshot in
+                    if !snapshot.exists() { return }
+                    //Obtener nombre elemento
+                    var a = String(self.i)
+                    a += "/NOMBRE"
+                    let nombre = snapshot.childSnapshot(forPath: a).value
+                    _ = Database.database().reference().child("CHECKLIST").child(self.getDate()).child(self.Unidad).child(self.Cajonera).child(nombre as! String).setValue(["Estado": "REVISAR","Observacion":obs])})}}))
+        self.present(alert, animated: true)
+    }
     
     func readDatabase(){
     //https://stackoverflow.com/questions/37759614/firebase-retrieving-data-in-swift
-        let ref = Database.database().reference().child("UNIDAD 83").child("0 Cabina")
+        let ref = Database.database().reference().child(Unidad).child(Cajonera)
         ref.observeSingleEvent(of: .value, with: { snapshot in
             
             if !snapshot.exists() { return }
