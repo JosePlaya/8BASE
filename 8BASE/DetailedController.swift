@@ -18,6 +18,7 @@ import Foundation
 import UIKit
 import Firebase
 import FirebaseDatabase
+import LocalAuthentication
 
 struct elemento {
     let nCajonera : String!
@@ -47,8 +48,23 @@ class DetailedController: UIViewController {
     }
     @IBAction func incorrectoBtn(_ sender: Any) {
         //Se debe cambiar el "ESTADO" del elemento a "malo"
+        let refR = Database.database().reference().child("UNIDAD 83").child("0 Cabina")
+        refR.observeSingleEvent(of: .value, with: { snapshot in
+            if !snapshot.exists() { return }
+            //Obtener nombre elemento
+            var a = String(self.i)
+            a += "/NOMBRE"
+            let nombre = snapshot.childSnapshot(forPath: a).value
+            
+            _ = Database.database().reference().child("CHECKLIST").child(self.getDate()).child(nombre as! String).setValue(["Estado": "malo"])
+        })
     }
     
+    @IBAction func retrocederBtn(_ sender: Any) { //NO ESTÁ FUNCIONANDO!!
+        i = i - 1 //restar al contador para que lea el elemento anterior
+        print(i)
+        readDatabase()
+    }
     
     //let elementos = [elemento]
 
@@ -103,6 +119,17 @@ class DetailedController: UIViewController {
             self.view.addSubview(self.observaciones)
             
         })
+    }
+    
+    func getDate() -> String{
+        //https://kodigoswift.com/swift-trabajo-con-fechas/
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        let fecha = dateFormatter.string(from: date)
+        
+        return fecha
     }
 }
 
