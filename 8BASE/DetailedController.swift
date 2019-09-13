@@ -30,12 +30,14 @@ struct elemento {
     let observaciones : String!
 }
 
-class DetailedController: UIViewController {
+class DetailedController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     var i = 0
     var Unidad = "UNIDAD 83"
     var Cajonera = "0 Cabina"
     var obs = "Sin observaciones"
+    
+    let carros = ["Unidad 81","Unidad 82","Unidad 83"]
     
     @IBOutlet weak var cajonera: UILabel!
     @IBOutlet weak var unidad: UILabel!
@@ -44,10 +46,11 @@ class DetailedController: UIViewController {
     @IBOutlet weak var marca: UILabel!
     @IBOutlet weak var modelo: UILabel!
     @IBOutlet weak var observaciones: UILabel!
+    @IBOutlet weak var pickerView: UIPickerView!
     
     @IBAction func continuarBtn(_ sender: Any) {
         i=i+1 //sumar al contador para que lea el siguiente elemento
-        readDatabase()
+        //readDatabase()
     }
     @IBAction func incorrectoBtn(_ sender: Any) {
         //Inicia cuadro de dialogo
@@ -57,18 +60,44 @@ class DetailedController: UIViewController {
     @IBAction func retrocederBtn(_ sender: Any) { //NO ESTÁ FUNCIONANDO!!
         i = i - 1 //restar al contador para que lea el elemento anterior
         print(i)
+        //readDatabase()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        pickerView.delegate = self
+        pickerView.dataSource = self
         readDatabase()
     }
     
-    //let elementos = [elemento]
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        readDatabase()
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
     }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return carros.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        print(carros[row])
+        return carros[row]
+    }
+    
+    /*func getUnidad() -> String{
+        let alert = UIAlertController(title: "Unidad", message: "Indique a cual carro le realizará el checklist", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "81", style: .default, handler: { action in
+            return "Unidad 81" }))
+        alert.addAction(UIAlertAction(title: "82", style: .default, handler: { action in
+            return "Unidad 82" }))
+        alert.addAction(UIAlertAction(title: "82", style: .default, handler: { action in
+            return "Unidad 83" }))
+        self.present(alert, animated: true)
+    }*/
+    
     func getError() { //Cuadro de dialogo para verificar que es lo que está mal
         //https://learnappmaking.com/uialertcontroller-alerts-swift-how-to/
-        let alert = UIAlertController(title: "¿Qué le pasó", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: "¿Qué le pasó?", message: "", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "No está", style: .default, handler: { action in
             let refR = Database.database().reference().child(self.Unidad).child(self.Cajonera)
             refR.observeSingleEvent(of: .value, with: { snapshot in
@@ -104,7 +133,7 @@ class DetailedController: UIViewController {
     
     func readDatabase(){
     //https://stackoverflow.com/questions/37759614/firebase-retrieving-data-in-swift
-        let ref = Database.database().reference().child(Unidad).child(Cajonera)
+        let ref = Database.database().reference().child("Unidad 83").child(Cajonera)
         ref.observeSingleEvent(of: .value, with: { snapshot in
             
             if !snapshot.exists() { return }

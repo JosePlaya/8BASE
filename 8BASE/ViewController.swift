@@ -34,11 +34,9 @@ class ViewController: UIViewController,UITextFieldDelegate {
                     alertController.addAction(defaultAction)
                     self.present(alertController, animated: true, completion: nil)
                 
-             }
+                 }
+            }
         }
-        
-    }
-   
     }
    
 
