@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5F4D70EB1885ACD19FA69E32 /* Pods_8BASE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BE4DA8858CD40A7FB35C957 /* Pods_8BASE.framework */; };
+		622DCA2C2339572500FCAAA8 /* OpcionesChecklistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622DCA2B2339572500FCAAA8 /* OpcionesChecklistController.swift */; };
 		8D70321C2307222A001306FA /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D70321B2307222A001306FA /* ScanViewController.swift */; };
 		8D70321E2307245A001306FA /* CheckController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D70321D2307245A001306FA /* CheckController.swift */; };
 		8D70B44D227CBB3300E11D7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D70B44C227CBB3300E11D7B /* AppDelegate.swift */; };
@@ -48,6 +49,7 @@
 		1B6BBA3BF642E72114D1DE23 /* Pods-8BASEUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-8BASEUITests.release.xcconfig"; path = "Target Support Files/Pods-8BASEUITests/Pods-8BASEUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4D02B9534BCB8D5A254EFA0F /* Pods-8BASETests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-8BASETests.release.xcconfig"; path = "Target Support Files/Pods-8BASETests/Pods-8BASETests.release.xcconfig"; sourceTree = "<group>"; };
 		4DD310A243F6C4F73DFC62A5 /* Pods_8BASETests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_8BASETests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		622DCA2B2339572500FCAAA8 /* OpcionesChecklistController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpcionesChecklistController.swift; sourceTree = "<group>"; };
 		66F8CD2958CB78BC2D15244A /* Pods-8BASEUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-8BASEUITests.debug.xcconfig"; path = "Target Support Files/Pods-8BASEUITests/Pods-8BASEUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6B42936A5705250290B3756D /* Pods-8BASE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-8BASE.debug.xcconfig"; path = "Target Support Files/Pods-8BASE/Pods-8BASE.debug.xcconfig"; sourceTree = "<group>"; };
 		7BE4DA8858CD40A7FB35C957 /* Pods_8BASE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_8BASE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +156,7 @@
 				8D70B44E227CBB3300E11D7B /* ViewController.swift */,
 				8D70B47D227CBC2200E11D7B /* GoogleService-Info.plist */,
 				8D70B450227CBB3300E11D7B /* Main.storyboard */,
+				622DCA2B2339572500FCAAA8 /* OpcionesChecklistController.swift */,
 				8DABAE5A231F28A800C3BD6B /* DetailedController.swift */,
 				8D70321D2307245A001306FA /* CheckController.swift */,
 				8D70B456227CBB3500E11D7B /* Assets.xcassets */,
@@ -431,6 +434,7 @@
 				8D70B455227CBB3300E11D7B /* _BASE.xcdatamodeld in Sources */,
 				8D70B44F227CBB3300E11D7B /* ViewController.swift in Sources */,
 				8D70B44D227CBB3300E11D7B /* AppDelegate.swift in Sources */,
+				622DCA2C2339572500FCAAA8 /* OpcionesChecklistController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

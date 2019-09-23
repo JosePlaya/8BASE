@@ -50,7 +50,7 @@ class DetailedController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     @IBAction func continuarBtn(_ sender: Any) {
         i=i+1 //sumar al contador para que lea el siguiente elemento
-        //readDatabase()
+        readDatabase()
     }
     @IBAction func incorrectoBtn(_ sender: Any) {
         //Inicia cuadro de dialogo
@@ -60,7 +60,7 @@ class DetailedController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     @IBAction func retrocederBtn(_ sender: Any) { //NO ESTÁ FUNCIONANDO!!
         i = i - 1 //restar al contador para que lea el elemento anterior
         print(i)
-        //readDatabase()
+        readDatabase()
     }
     
     override func viewDidLoad() {
@@ -133,7 +133,7 @@ class DetailedController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     func readDatabase(){
     //https://stackoverflow.com/questions/37759614/firebase-retrieving-data-in-swift
-        let ref = Database.database().reference().child("Unidad 83").child(Cajonera)
+        let ref = Database.database().reference().child(Unidad).child(Cajonera)
         ref.observeSingleEvent(of: .value, with: { snapshot in
             
             if !snapshot.exists() { return }

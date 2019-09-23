@@ -312,7 +312,7 @@
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dRl-b5-cHC">
-                                <rect key="frame" x="344" y="-43" width="155" height="216"/>
+                                <rect key="frame" x="344" y="-43" width="154" height="216"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                         </subviews>
@@ -421,6 +421,6 @@
         <image name="New Project-2" width="350" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Zr7-6G-3lw"/>
+        <segue reference="W1N-05-flh"/>
     </inferredMetricsTieBreakers>
 </document>
